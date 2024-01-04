@@ -1,8 +1,16 @@
 syntax = "proto3";
 
-message Person {
+import "protobuf-ts.proto";
+import "google/protobuf/empty.proto";
+
+service Greeter {
+  option (ts.server) = GRPC1_SERVER;
+  rpc Hello (google.protobuf.Empty) returns (PersonResponse) {
+
+  }
+}
+
+message PersonResponse {
     string name = 1;
-    uint64 id = 2;
-    int32 years = 3;
     optional bytes data = 5;
 }
