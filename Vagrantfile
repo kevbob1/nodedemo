@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
 
     default.vm.provision "shell", privileged: false, inline: <<-SHELL
       apt-get update
+      apt-get upgrade -y
 
       #nvm
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -35,6 +36,9 @@ Vagrant.configure("2") do |config|
 
     default.vm.provision "shell", privileged: false, inline: <<-SHELL
       #app
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
       cd /vagrant
       yarn install
     SHELL
@@ -43,7 +47,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "redis" do |redis|
     redis.vm.provider "docker" do |d|
-      d.image = "redis:5"
+      d.image = "redis:6"
     end
 
     redis.vm.network "forwarded_port", guest: 6379, host: 6479
