@@ -1,14 +1,13 @@
 import * as grpc from "@grpc/grpc-js";
 import { adaptService } from "@protobuf-ts/grpc-backend";
-import { IGreeter } from "./generated/person.grpc-server";
-import { Greeter, PersonResponse } from "./generated/person";
-import { Empty } from "./generated/google/protobuf/empty";
+import { IGreeter } from "./generated/nodedemo/v1/helllo_world.grpc-server";
+import { Greeter, HelloReply, HelloRequest } from "./generated/nodedemo/v1/helllo_world";
 
 class GreeterImpl implements IGreeter {
 	[name: string]: grpc.UntypedHandleCall;
-	async hello(call: grpc.ServerUnaryCall<Empty, PersonResponse>, callback: grpc.sendUnaryData<PersonResponse>) {
-		const reply = PersonResponse.create(
-			{ name: "Hello " }
+	async sayHello(call: grpc.ServerUnaryCall<HelloRequest, HelloReply>, callback: grpc.sendUnaryData<HelloReply>) {
+		const reply = HelloReply.create(
+			{ message: "Hello " }
 		);
 		callback(null, reply);
 	}
