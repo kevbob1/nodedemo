@@ -1,10 +1,7 @@
 import KoaRouter from "koa-router";
-import { Person } from "./generated/nodedemo/v1/person"
+import { Person } from "./generated/nodedemo/v1/persons"
 
 const router = new KoaRouter();
-
-
-
 
 router.get('/test', (ctx) => {
     ctx.body = "Hello World!";

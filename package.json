@@ -9,7 +9,8 @@
   "scripts": {
     "grpc": "protoc --ts_out src/generated --proto_path protos protos/nodedemo/v1/*.proto",
     "build": "tsc",
-    "start": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "lint": "eslint --cache src"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.9.13",
@@ -23,6 +24,9 @@
     "@types/koa": "^2.13.12",
     "@types/koa-router": "^7.4.8",
     "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3"
   }
