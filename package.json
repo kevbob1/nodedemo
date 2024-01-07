@@ -4,7 +4,6 @@
   "main": "dist/app.js",
   "repository": "git@github.com:kevbob1/nodedemo.git",
   "author": "Kevin Bennett",
-  "module": "commonjs",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -21,6 +20,7 @@
     "koa": "^2.15.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@tsconfig/node20": "^20.1.2",
     "@types/jest": "^29.5.11",
     "@types/koa": "^2.13.12",

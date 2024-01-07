@@ -2,14 +2,10 @@ import type {Config} from '@jest/types';
 // Sync object
 const config: Config.InitialOptions = {
   verbose: true,
-  rootDir:"./src/test",
-  transform: { "^.+\\.tsx?$": ["ts-jest", {"rootDir": "."}] },
-  globals: {
-    "ts-jest": {
-      tsconfig: {
-        rootDir: '.'
-      }
-    }
-  }
+  preset: 'ts-jest',
+  rootDir:"./src",
+  transform: { "^.+\\.test\\.tsx?$": ["ts-jest", {
+    tsconfig: '<rootDir>/../tsconfig.json'
+  }] }
 };
 export default config;
