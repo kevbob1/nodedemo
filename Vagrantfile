@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
       d.has_ssh = true
       d.remains_running = true
     end
+    default.ssh.extra_args = ["-t", "cd /vagrant; bash --login"]
     default.vm.network "forwarded_port", guest: 3000, host: 3000
 
     default.vm.provision "shell", privileged: false, inline: <<-SHELL
