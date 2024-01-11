@@ -4432,7 +4432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-protoc@npm:^1.0.3":
+"node-protoc@npm:^1.0.0":
   version: 1.0.3
   resolution: "node-protoc@npm:1.0.3"
   dependencies:
@@ -4461,9 +4461,11 @@ __metadata:
   resolution: "nodedemo@workspace:."
   dependencies:
     "@grpc/grpc-js": ^1.9.13
+    "@jest/types": ^29.6.3
     "@protobuf-ts/grpc-backend": ^2.9.3
     "@protobuf-ts/plugin": ^2.9.3
     "@protobuf-ts/runtime": ^2.9.3
+    "@protobuf-ts/runtime-rpc": ^2.9.3
     "@tsconfig/node16": "*"
     "@types/jest": "*"
     "@types/koa": "*"
@@ -4473,8 +4475,9 @@ __metadata:
     eslint: ^8.56.0
     jest: "*"
     koa: ^2.15.0
-    node-protoc: ^1.0.3
+    node-protoc: ^1.0.0
     ts-jest: "*"
+    ts-node: ^10.9.2
     ts-node-dev: "*"
     typescript: ^5.3.0
   languageName: unknown
@@ -5464,7 +5467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.4.0":
+"ts-node@npm:^10.4.0, ts-node@npm:^10.9.2":
   version: 10.9.2
   resolution: "ts-node@npm:10.9.2"
   dependencies:
