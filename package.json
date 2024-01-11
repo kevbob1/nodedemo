@@ -7,6 +7,7 @@
   "license": "MIT",
   "packageManager": "yarn@3.6.2",
   "scripts": {
+    "protocfix": "cp ./node_modules/@protobuf-ts/plugin/protobuf-ts.proto ./protos",
     "grpc": "protoc --ts_out src/generated --proto_path protos protos/nodedemo/v1/*.proto",
     "build": "tsc",
     "start": "ts-node-dev --respawn --transpile-only src/app.ts",
@@ -16,10 +17,11 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.9.13",
     "@protobuf-ts/grpc-backend": "^2.9.3",
-    "@protobuf-ts/plugin": "^2.9.3",
+    "@protobuf-ts/runtime": "^2.9.3",
     "koa": "^2.15.0"
   },
   "devDependencies": {
+    "@protobuf-ts/plugin": "^2.9.3",
     "@tsconfig/node16": "*",
     "@types/jest": "*",
     "@types/koa": "*",
@@ -28,6 +30,7 @@
     "@typescript-eslint/parser": "^6.18.0",
     "eslint": "^8.56.0",
     "jest": "*",
+    "node-protoc": "^1.0.3",
     "ts-jest": "*",
     "ts-node-dev": "*",
     "typescript": "^5.3.0"
