@@ -5,6 +5,7 @@
   "repository": "git@github.com:kevbob1/nodedemo.git",
   "author": "Kevin Bennett",
   "license": "MIT",
+  "packageManager": "yarn@3.6.2",
   "scripts": {
     "grpc": "protoc --ts_out src/generated --proto_path protos protos/nodedemo/v1/*.proto",
     "build": "tsc",
@@ -28,6 +29,8 @@
     "eslint": "^8.56.0",
     "jest": "*",
     "ts-jest": "*",
+    "ts-node": "*",
+    "ts-node-dev": "*",
     "typescript": "*"
   }
 }
