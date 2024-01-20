@@ -765,7 +765,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:^29.6.3":
+"@jest/types@npm:*, @jest/types@npm:^29.6.3":
   version: 29.6.3
   resolution: "@jest/types@npm:29.6.3"
   dependencies:
@@ -4461,7 +4461,7 @@ __metadata:
   resolution: "nodedemo@workspace:."
   dependencies:
     "@grpc/grpc-js": ^1.9.13
-    "@jest/types": ^29.6.3
+    "@jest/types": "*"
     "@protobuf-ts/grpc-backend": ^2.9.3
     "@protobuf-ts/plugin": ^2.9.3
     "@protobuf-ts/runtime": ^2.9.3

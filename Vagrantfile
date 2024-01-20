@@ -10,20 +10,18 @@ Vagrant.configure("2") do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
-  config.vm.define "default" do |default|
-    default.ssh.username = "root"
-    default.vm.allow_fstab_modification = false
-    default.vm.provider "docker" do |d|
-      d.image = "kevbob/docker-vagrant:jammy-1.0.1"
+  config.vm.define "node" do |node|
+    node.ssh.username = "root"
+    node.vm.allow_fstab_modification = false
+    node.vm.provider "docker" do |d|
+      d.image = "kevbob/docker-vagrant:jammy-1.0.1-1"
       d.has_ssh = true
       d.remains_running = true
     end
-    default.ssh.extra_args = ["-t", "cd /vagrant; bash --login"]
-    default.vm.network "forwarded_port", guest: 3000, host: 3000
+    node.ssh.extra_args = ["-t", "cd /vagrant; bash --login"]
+    node.vm.network "forwarded_port", guest: 3000, host: 3000
 
-    default.vm.provision "shell", privileged: false, inline: <<-SHELL
-      apt-get update
-      apt-get upgrade -y
+    node.vm.provision "shell", privileged: false, inline: <<-SHELL
 
       #nvm
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -32,15 +30,16 @@ Vagrant.configure("2") do |config|
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
       cd /vagrant
       nvm install
-      npm install -g yarn 
     SHELL
 
-    default.vm.provision "shell", privileged: false, inline: <<-SHELL
+    node.vm.provision "shell", privileged: false, inline: <<-SHELL
       #app
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
       cd /vagrant
+      corepack enable
+      corepack prepare —-activate
       yarn install
     SHELL
 
