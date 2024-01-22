@@ -53,4 +53,14 @@ Vagrant.configure("2") do |config|
     redis.vm.network "forwarded_port", guest: 6379, host: 6479
 
   end
+
+  config.vm.define "neo" do |neo|
+    neo.vm.provider "docker" do |d|
+      d.image = "neo4j"
+    end
+
+    neo.vm.network "forwarded_port", guest: 7474, host: 7474 
+    neo.vm.network "forwarded_port", guest: 7687, host: 7687 
+
+  end
 end
