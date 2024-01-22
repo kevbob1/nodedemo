@@ -23,10 +23,13 @@ render(app, {
   async: true
 });
 
-app.use(BodyParser())
-app.use(cors())
-app.use(Logger())
-app.use(mount('/static', serve('./public')))
+app.use(BodyParser());
+app.use(cors());
+app.use(Logger());
+app.use(mount('/static', serve('./public')));
+app.use(mount('/js', serve(path.join(__dirname, '../node_modules/jquery/dist'))));
+app.use(mount('/js', serve(path.join(__dirname, '../node_modules/bootstrap/dist/js'))));
+app.use(mount('/css', serve(path.join(__dirname, '../node_modules/bootstrap/dist/css'))));
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(PORT, () => {
     console.log(`🚀 Server listening http://localhost:${PORT}/ 🚀`);
