@@ -56,18 +56,18 @@ Vagrant.configure("2") do |config|
   config.vm.define "redis" do |redis|
     redis.vm.provider "docker" do |d|
       d.image = "redis:6"
-      d.name = "redis"
+      d.name = "nodedemo_redis"
       d.expose = ["6379"]
     end
 
-    redis.vm.network "forwarded_port", guest: 6379, host: 6479
+    redis.vm.network "forwarded_port", guest: 6379, host: 6380
 
   end
 
   config.vm.define "neo" do |neo|
     neo.vm.provider "docker" do |d|
       d.image = "neo4j"
-      d.name = "neo4j"
+      d.name = "nodedemo_neo4j"
       d.expose = ["7474", "7687"]
     end
 

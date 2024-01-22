@@ -1,6 +1,6 @@
 import config from "./config";
 import Koa from "koa";
-import cors from "koa-cors";
+import cors from "@koa/cors";
 import BodyParser  from "koa-bodyparser";
 import Logger from "koa-logger";
 import serve from "koa-static";

@@ -807,6 +807,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@koa/cors@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@koa/cors@npm:5.0.0"
+  dependencies:
+    vary: ^1.1.2
+  checksum: 050701fb57dede2fefe0217459782bab7c9488fd07ff1f87fff680005cab43e03b7509e6015ea68082aadb1b31fe3eea7858ebdc93a2cf6f26d36d071190d50c
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1206,15 +1215,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa-cors@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "@types/koa-cors@npm:0.0.6"
-  dependencies:
-    "@types/koa": "*"
-  checksum: f77df33346be025b667d8113238d7b50c993d670b9dedf0ea3551ddb004f6dfcd387246b06cd9cab414818955b77b97ebeda7c88c9c72f65b69098bb1b69c027
-  languageName: node
-  linkType: hard
-
 "@types/koa-ejs@npm:^4.3.3":
   version: 4.3.3
   resolution: "@types/koa-ejs@npm:4.3.3"
@@ -1284,6 +1284,15 @@ __metadata:
     "@types/koa-compose": "*"
     "@types/node": "*"
   checksum: 4a2e7e19bf91779d0a3c46b8838d6faba5ee0e9a888e5ef8683722c21aa8efcf35f86d1a661adb56ca9f239f7724e306055e33bfa1b2dc008b9c0fa9fcc12bee
+  languageName: node
+  linkType: hard
+
+"@types/koa__cors@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@types/koa__cors@npm:5.0.0"
+  dependencies:
+    "@types/koa": "*"
+  checksum: ad8e6a482f1bb0e357e0051faec328a75e2978a24065a953032d5dba58ac08edf5ca66b03059551f0faf9e085b15ee7892e6ab03c9500af4be8bd258965479c9
   languageName: node
   linkType: hard
 
@@ -3974,13 +3983,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koa-cors@npm:^0.0.16":
-  version: 0.0.16
-  resolution: "koa-cors@npm:0.0.16"
-  checksum: 66d85b7a4834c436a6bfbe77248a19edebc2082c5e73d907c680a96f75ec1963146024b29cc3bb04c7790e52c6f0067f3dd71a0e341bdcc83dbc6971b86a3339
-  languageName: node
-  linkType: hard
-
 "koa-ejs@npm:^4.3.0":
   version: 4.3.0
   resolution: "koa-ejs@npm:4.3.0"
@@ -4490,18 +4492,19 @@ __metadata:
   resolution: "nodedemo@workspace:."
   dependencies:
     "@jest/types": "*"
+    "@koa/cors": ^5.0.0
     "@tsconfig/node20": "*"
     "@types/dotenv": ^8.2.0
     "@types/http-status": ^1.1.2
     "@types/jest": "*"
     "@types/koa": "*"
     "@types/koa-bodyparser": ^4.3.12
-    "@types/koa-cors": ^0.0.6
     "@types/koa-ejs": ^4.3.3
     "@types/koa-logger": ^3.1.5
     "@types/koa-mount": ^4.0.5
     "@types/koa-router": ^7.4.8
     "@types/koa-static": ^4.0.4
+    "@types/koa__cors": ^5.0.0
     "@types/node": ^20
     "@typescript-eslint/eslint-plugin": ^6.18.0
     "@typescript-eslint/parser": ^6.18.0
@@ -4513,7 +4516,6 @@ __metadata:
     jquery: ^3.7.1
     koa: ^2.15.0
     koa-bodyparser: ^4.4.1
-    koa-cors: ^0.0.16
     koa-ejs: ^4.3.0
     koa-logger: ^3.2.1
     koa-mount: ^4.0.0
