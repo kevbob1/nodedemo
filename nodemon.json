@@ -1,0 +1,14 @@
+{
+	"legacyWatch": true,
+	"ignore": [
+		"*.test.ts",
+		"**/fixtures/**"
+	],
+	"execMap": {
+		"ts": "ts-node -T"
+	},
+	"watch": [
+		"src"
+	],
+	"ext": "ts,tsx,json"
+}
