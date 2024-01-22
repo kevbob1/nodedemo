@@ -1067,6 +1067,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dotenv@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "@types/dotenv@npm:8.2.0"
+  dependencies:
+    dotenv: "*"
+  checksum: a1f524da7dc18b09bdb6c2613b9abbbe8ca575621cce4625efc7f98daf2ba07c7dbab622c9bb394507a12c5c515f9cbbbba4aeec17b801c88faeb8e8e656d460
+  languageName: node
+  linkType: hard
+
 "@types/express-serve-static-core@npm:^4.17.33":
   version: 4.17.41
   resolution: "@types/express-serve-static-core@npm:4.17.41"
@@ -2223,7 +2232,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.3.2":
+"dotenv@npm:*, dotenv@npm:^16.3.2":
   version: 16.3.2
   resolution: "dotenv@npm:16.3.2"
   checksum: 917b27eeb654b95846484009326b1c52af7a7c25f7b09e2939ed49de8f98cb9895dcc04f13a39cdb078d247985e21147311ccb5bfbf2fd151afb20fa8f96de15
@@ -4259,6 +4268,7 @@ __metadata:
   dependencies:
     "@jest/types": "*"
     "@tsconfig/node20": "*"
+    "@types/dotenv": ^8.2.0
     "@types/jest": "*"
     "@types/koa": "*"
     "@types/koa-bodyparser": ^4.3.12

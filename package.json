@@ -24,6 +24,7 @@
   "devDependencies": {
     "@jest/types": "*",
     "@tsconfig/node20": "*",
+    "@types/dotenv": "^8.2.0",
     "@types/jest": "*",
     "@types/koa": "*",
     "@types/koa-bodyparser": "^4.3.12",
