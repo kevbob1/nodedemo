@@ -64,7 +64,7 @@ Vagrant.configure("2") do |config|
 
   end
 
-  config.vm.define "neo" do |neo|
+  config.vm.define "neo4j" do |neo|
     neo.vm.provider "docker" do |d|
       d.image = "neo4j"
       d.name = "nodedemo_neo4j"

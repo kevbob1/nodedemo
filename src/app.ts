@@ -7,6 +7,7 @@ import serve from "koa-static";
 import mount from "koa-mount";
 import render from "koa-ejs";
 import path from "path";
+import { driver } from "./db";
 
 
 import { router } from "./routes";

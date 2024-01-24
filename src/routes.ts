@@ -1,14 +1,14 @@
 import { Context, DefaultState } from "koa";
 import Router from 'koa-router';
 import HttpStatus from "http-status";
-
+import { driver } from "./db";
 
 export const router = new Router<DefaultState, Context>();
 
-router.get("/book",async (ctx,next)=>{
-  const books = ["Speaking javascript", "Fluent Python", "Pro Python", "The Go programming language"];
+router.get("/status",async (ctx,next)=>{
+  const serverInfo = await driver.getServerInfo(); 
   ctx.status = HttpStatus.OK;
-  ctx.body = books;
+  ctx.body = serverInfo;
   await next();
 });
 
